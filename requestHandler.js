@@ -51,7 +51,6 @@ const requestHandler = (req, res) => {
     const query = parsed.query;
     console.log(query);
   if(pathName === '/login'){
-    res.write('Login Success');  
     res.write(loginAPI());
   }else if(pathName === `/name`){  
     res.write(nameAPI(query.token));
