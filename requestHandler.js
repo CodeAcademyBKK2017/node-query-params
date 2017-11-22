@@ -9,47 +9,38 @@ const loginAPI = ()=>{
 }
 // NAME API - http://localhost:3008/name?token="TOKEN FROM LOGIN"
     // :: check token and return "john" if token is correct. If token incorrect, return "WRONG TOKEN"
-const nameAPI = (token)=>{
+const responseData = (token,data)=>{
     if(token === TOKEN){
-        return "john"
+        return data
     }else{
         return "WRONG TOKEN"
     }
+}
+const nameAPI = (token)=>{
+   return responseData(token,'john');
 }
 // DOB API - http://localhost:3008/dob?token="TOKEN FROM LOGIN"
     // :: check token and return "16/01/1993" if token is correct. If token incorrect, return "WRONG TOKEN"
 const dobAPI = (token)=>{
-    if(token === TOKEN){
-        return "16/01/1993"
-    }else{
-        return "WRONG TOKEN"
-    }
+    return responseData(token,'16/01/1993');
 }
 // PHONE API - http://localhost:3008/phone?token="TOKEN FROM LOGIN"
     // :: check token and return "987654321" if token is correct. If token incorrect, return "WRONG TOKEN"
-    const phoneAPI = (token)=>{
-        if(token === TOKEN){
-            return "987654321"
-        }else{
-            return "WRONG TOKEN"
-        }
-    }
+const phoneAPI = (token)=>{
+    return responseData(token,'987654321');
+}
 // LOGOUT API - http://localhost:3008/logout?token="TOKEN FROM LOGIN"
     // :: check token and return "LOGOUT SUCCESS". If token incorrect, return "WRONG TOKEN"
-    const logoutAPI = (token)=>{
-        if(token === TOKEN){
-            return "LOGOUT SUCCESS"
-        }else{
-            return "WRONG TOKEN"
-        }
-    }
+const logoutAPI = (token)=>{
+    return responseData(token,'LOGOUT SUCCESS');
+}
 
 const requestHandler = (req, res) => {
-    console.log(url.parse(req.url));
+    // console.log(url.parse(req.url));
     const parsed = url.parse(req.url,true);
     const pathName = parsed.pathname;
     const query = parsed.query;
-    console.log(query);
+    // console.log(query);
   if(pathName === '/login'){
     res.write(loginAPI());
   }else if(pathName === `/name`){  
@@ -66,4 +57,12 @@ const requestHandler = (req, res) => {
   res.end(); //end the response
 }
 
-module.exports = requestHandler;
+// module.exports = requestHandler;
+module.exports = {
+    loginAPI : loginAPI,
+    nameAPI : nameAPI,
+    dobAPI : dobAPI,
+    phoneAPI : phoneAPI,
+    logoutAPI : logoutAPI,
+    requestHandler : requestHandler
+};
