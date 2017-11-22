@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage",
+    "test:watch": "jest --watchAll"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +15,10 @@
   },
   "devDependencies": {
     "jest": "^21.2.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "*.js"
+    ]
   }
 }

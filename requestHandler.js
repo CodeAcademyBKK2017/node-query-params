@@ -1,5 +1,5 @@
 const TOKEN = 'bd3503c920776975085980d98b592b1c';
-
+const url = require('url');
 // Create the following APIs:
 // =========
 // LOGIN API -  http://localhost:3008/login
@@ -19,7 +19,39 @@ const TOKEN = 'bd3503c920776975085980d98b592b1c';
 
 
 const requestHandler = (req, res) => {
-  res.write('Hello World!'); //write a response to the client
+    const requestData = url.parse(req.url, true); 
+    // url.parse(req.url);  token=123"
+    // url.parse(req.url, true);  {token: 123}
+
+    if(requestData.pathname === '/login'){
+        res.write(TOKEN); //write a response to the client   
+    }else if(requestData.pathname === '/name'){ //name?token=1234
+        if(requestData.query.token === TOKEN){
+            res.write('john');
+        }else{
+            res.write('WRONG TOKEN');
+        }
+    }else if(requestData.pathname === '/dob'){
+        if(requestData.query.token === TOKEN){
+            res.write('16/01/1993');
+        }else{
+            res.write('WRONG TOKEN');
+        }
+    }else if(requestData.pathname === '/phone'){
+        if(requestData.query.token === TOKEN){
+            res.write('987654321');
+        }else{
+            res.write('WRONG TOKEN');
+        }
+    }else if(requestData.pathname === '/logout'){
+        if(requestData.query.token === TOKEN){
+            res.write('LOGOUT SUCCESS');
+        }else{
+            res.write('WRONG TOKEN');
+        }
+    }else{
+        res.write('Hello World!'); //write a response to the client
+    }
   res.end(); //end the response
 }
 
