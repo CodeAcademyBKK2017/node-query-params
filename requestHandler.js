@@ -1,4 +1,5 @@
 const TOKEN = 'bd3503c920776975085980d98b592b1c';
+const url = require('url');
 
 // Create the following APIs:
 // =========
@@ -19,7 +20,31 @@ const TOKEN = 'bd3503c920776975085980d98b592b1c';
 
 
 const requestHandler = (req, res) => {
-  res.write('Hello World!'); //write a response to the client
+    const q = url.parse(req.url,true)
+    
+    if (q.pathname === '/login'){
+        res.write(TOKEN)
+    }
+    else if(q.pathname === `/name`){
+        if(q.query.token !== TOKEN) res.write('TOKEN WRONG');
+        else res.write('john')
+    }
+    else if(q.pathname === '/dob'){
+        if(q.query.token !== TOKEN) res.write('TOKEN WRONG');
+        else res.write('16/01/1993')
+    }
+    else if(q.pathname === '/phone'){
+        if(q.query.token !== TOKEN) res.write('TOKEN WRONG');
+        else res.write('987654321')
+    }
+    else if(q.pathname === '/logout'){
+        if(q.query.token !== TOKEN) res.write('TOKEN WRONG');
+        else res.write('LOGOUT SUCCESS')
+    }
+    else{
+        res.write('Hello World!'); //write a response to the client
+    }
+    
   res.end(); //end the response
 }
 
