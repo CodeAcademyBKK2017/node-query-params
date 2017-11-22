@@ -32,7 +32,7 @@ const doOperation = () => login()
   .catch(err => err.message);
 
 
-// doOperation();
+ doOperation();
 
 module.exports = {
   doOperation: doOperation,
