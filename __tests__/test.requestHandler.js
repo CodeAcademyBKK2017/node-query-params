@@ -24,33 +24,33 @@ const response = {
      end : jest.fn()
 }
 test('Test for response with url=/ is working',()=>{
-    request.url = 'http://localhost:3008/';
+    request.url = 'http://test.com/';
     requestHandler.requestHandler(request,response);
     expect(response.write).toHaveBeenCalled();
     expect(response.write).toHaveBeenCalledWith('Server Error');
 })
 test('Test for response with url=/login is working',()=>{
-    request.url = 'http://localhost:3008/login';
+    request.url = 'http://test.com/login';
     requestHandler.requestHandler(request,response);
     expect(response.write).toHaveBeenCalled();
 })
 test('Test for response with url=/name is working',()=>{
-    request.url = `http://localhost:3008/name?=${correctToken}`;
+    request.url = `http://test.com/name?=${correctToken}`;
     requestHandler.requestHandler(request,response);
     expect(response.write).toHaveBeenCalled();
 })
 test('Test for response with url=/dob is working',()=>{
-    request.url = `http://localhost:3008/dob?=${correctToken}`;
+    request.url = `http://test.com/dob?=${correctToken}`;
     requestHandler.requestHandler(request,response);
     expect(response.write).toHaveBeenCalled();
 })
 test('Test for response with url=/phone is working',()=>{
-    request.url = `http://localhost:3008/phone?=${correctToken}`;
+    request.url = `http://test.com/phone?=${correctToken}`;
     requestHandler.requestHandler(request,response);
     expect(response.write).toHaveBeenCalled();
 })
 test('Test for response with url=/logout is working',()=>{
-    request.url = `http://localhost:3008/logout?=${correctToken}`;
+    request.url = `http://test.com/logout?=${correctToken}`;
     requestHandler.requestHandler(request,response);
     expect(response.write).toHaveBeenCalled();
 })
