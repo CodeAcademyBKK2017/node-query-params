@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage && npm run lint",
+    "start": "nodemon server.js",
+    "lint": "eslint *.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +15,8 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "jest": "^21.2.1"
+    "eslint": "^4.11.0",
+    "jest": "^21.2.1",
+    "nodemon": "^1.12.1"
   }
 }
