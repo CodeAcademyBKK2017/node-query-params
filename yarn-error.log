@@ -1,0 +1,54 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add eslint
+
+PATH: 
+  C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_144;C:\Users\true\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\true\AppData\Local\Microsoft\WindowsApps;C:\Users\true\AppData\Roaming\npm;C:\Users\true\AppData\Local\atom\bin;C:\Program Files\Java\jdk1.8.0_144;C:\Users\true\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\true\AppData\Roaming\nvm;C:\Program Files\nodejs
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.9.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "node-query-params",
+    "version": "1.0.0",
+    "description": "Create basic GET APIs in NodeJS and parse queryParams",
+    "main": "server.js",
+    "scripts": {
+      "test": "jest --coverage",
+      "start": "nodemon server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "request": "^2.83.0",
+      "request-promise": "^4.2.2"
+    },
+    "devDependencies": {
+      "eslint": "^4.11.0",
+      "jest": "^21.2.1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/CodeAcademyBKK2017/node-query-params.git"
+    },
+    "keywords": [],
+    "bugs": {
+      "url": "https://github.com/CodeAcademyBKK2017/node-query-params/issues"
+    },
+    "homepage": "https://github.com/CodeAcademyBKK2017/node-query-params#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EPERM: operation not permitted, open 'C:\Users\true\javascriptTest\node-query-params\node_modules\.bin\jest.cmd'

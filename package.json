@@ -1,10 +1,12 @@
 {
   "name": "node-query-params",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create basic GET APIs in NodeJS and parse queryParams",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage && npm run lint",
+    "start": "nodemon server.js",
+    "lint": "eslint *.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +15,16 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
+    "eslint": "^4.11.0",
     "jest": "^21.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeAcademyBKK2017/node-query-params.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/CodeAcademyBKK2017/node-query-params/issues"
+  },
+  "homepage": "https://github.com/CodeAcademyBKK2017/node-query-params#readme"
 }
