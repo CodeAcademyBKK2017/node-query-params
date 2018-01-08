@@ -1,4 +1,6 @@
 const http = require('http');
-const requestHandler = require('./requestHandler');
+const reqHand = require('./requestHandler');
+const port = 3008;
 
-http.createServer(requestHandler).listen(3008);
+http.createServer(reqHand.requestHandler).listen(port);
+console.log(`START SERVER WITH PORT ${port}`);
